@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-Light.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-ExtraLight.ttf);
+  font-weight: 200;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* навигация */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #313133;
+}
+
+.nav__logo {
+  color: #d9c043;
+  font-weight: 700;
+  text-decoration: overline;
+}
+
+.nav__form__input {
+  border-radius: 6px;
+  border: none;
+  background: #525357;
+  padding: 7px;
+  color: white;
+  margin-right: 3px;
+}
+
+.nav__form__label {
+    color: #d9c043;
+}
+
+.nav__form__btn {
+  height: 100%;
+  padding: 0 7px;
+  background: #d9c043;
+  border: none;
+  border-radius: 6px;
+}
+
+/* Header */
+header {
+  min-height: 500px;
+  width: 100%;
+  background-size: cover;
+}
+
+/* Main */
+main {
+  width: 100%;
+  background: #313133;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.not-found {
+    color: white;
+    margin: auto;
+}
+
+/* Film */
+.films__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+.film {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 4 - 15px);
+}
+
+.film__poster {
+  height: 400px;
+  object-fit: cover;
+}
+
+.film__name,
+.film__year {
+  color: white;
+}
+
+.film__name {
+  padding-top: 10px;
+}
+
+.film__year {
+  font-size: 14px;
+  font-weight: 200;
+  padding-bottom: 10px;
+}
+
+/* Категории */
+.categories {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.category {
+    color: #d9c043;
+    padding: 10px 15px;
+    border: 2px solid #d9c043;
+    border-radius: 20px;
+    cursor: pointer;
+}
