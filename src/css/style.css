@@ -30,6 +30,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+html {
+  font-size: 16px;
+}
+
 /* навигация */
 nav {
   width: 100%;
@@ -44,6 +48,7 @@ nav {
   color: #d9c043;
   font-weight: 700;
   text-decoration: overline;
+  cursor: pointer;
 }
 
 .nav__form__input {
@@ -56,7 +61,7 @@ nav {
 }
 
 .nav__form__label {
-    color: #d9c043;
+  color: #d9c043;
 }
 
 .nav__form__btn {
@@ -83,8 +88,8 @@ main {
 }
 
 .not-found {
-    color: white;
-    margin: auto;
+  color: white;
+  margin: auto;
 }
 
 /* Film */
@@ -106,34 +111,161 @@ main {
   object-fit: cover;
 }
 
+.film__container-of-span {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 5px 8px;
+  box-sizing: border-box;
+}
+
 .film__name,
 .film__year {
   color: white;
 }
 
-.film__name {
-  padding-top: 10px;
-}
-
 .film__year {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 200;
-  padding-bottom: 10px;
 }
 
 /* Категории */
 .categories {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 70%;
   margin: auto;
   margin-bottom: 30px;
 }
 
 .category {
-    color: #d9c043;
-    padding: 10px 15px;
-    border: 2px solid #d9c043;
-    border-radius: 20px;
-    cursor: pointer;
+  color: #d9c043;
+  padding: 10px 15px;
+  border: 2px solid #d9c043;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.category:hover {
+  transform: scale(1.2);
+}
+
+.category__active {
+  background-color: #d9c043;
+  color: #313133;
+}
+
+/* Film page */
+.film__page {
+  display: flex;
+  gap: 20px;
+  padding: 0 40px 30px 40px;
+  height: 100vh;
+  color: white;
+}
+
+.film__page__img {
+  height: 90vh;
+}
+
+.film__information {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.film__genres {
+  display: flex;
+  gap: 10px;
+}
+
+.film__genre {
+  background-color: #d9c043;
+  color: #313133;
+  border-radius: 7px;
+  padding: 4px 6px;
+  font-weight: 600;
+}
+
+.film__rating {
+  font-size: 1.56rem;
+  background-color: #75661b;
+  align-self: flex-start;
+  padding: 6px 8px;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 14px;
+  }
+  header {
+    height: 300px;
+  }
+  .categories {
+    width: min-content;
+    gap: 5px;
+  }
+  .category {
+    padding: 5px 10px;
+  }
+  .film {
+    width: calc(100% / 3 - 10px);
+  }
+
+  .film__page {
+    height: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  header {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 680px) {
+  .categories {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .film {
+    width: calc(100% / 2 - 7.5px);
+  }
+
+  .film__page {
+    flex-direction: column;
+  }
+  .film__page__img {
+    height: auto;
+  width: 70%;
+  margin: auto;
+  }
+}
+
+@media (max-width: 440px) {
+  html {
+    font-size: 11px;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  header {
+    min-height: 200px;
+    max-height: 200px;
+  }
+  .film {
+    width: 100%;
+  }
+  .film__name,
+  .film__year {
+    font-size: 1.3rem;
+  }
+  .category {
+    border: 1px solid #d9c043;
+  }
 }

@@ -4,6 +4,7 @@ import Category from "./Category";
 export default function Categories({ hendleGenre }) {
   const [genreId, setGenreId] = useState("");
   const [genres, setGenres] = useState([]);
+  const [activeCategory, setActiveCategory] = useState("");
 
   const categories = [
     "Новинки",
@@ -12,16 +13,18 @@ export default function Categories({ hendleGenre }) {
     "Детектив",
     "Драма",
     "Триллер",
+    "Фантастика"
   ];
 
   const hendleGenreName = (value) => {
     const correctValue = value.toLowerCase();
-    let currentValue = '';
+    let currentValue = "";
     if (correctValue !== "новинки") {
-        currentValue = genres.find((el) => el.genre === correctValue).id;
-        setGenreId(currentValue);
+      currentValue = genres.find((el) => el.genre === correctValue).id;
+      setGenreId(currentValue);
     }
-    hendleGenre(currentValue)
+    hendleGenre(currentValue);
+    setActiveCategory(value);
   };
 
   useEffect(() => {
@@ -36,12 +39,16 @@ export default function Categories({ hendleGenre }) {
       .then((json) => setGenres(json.genres))
       .catch((err) => console.log(err));
   }, []);
-//   console.log(genres);
 
   return (
     <div className="categories">
       {categories.map((el, index) => (
-        <Category name={el} key={index} hendleGenreName={hendleGenreName} />
+        <Category
+          name={el}
+          key={index}
+          hendleGenreName={hendleGenreName}
+          active={activeCategory === el}
+        />
       ))}
     </div>
   );

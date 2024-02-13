@@ -3,6 +3,7 @@ import AllFilms from "../components/AllFilms";
 import Categories from "../components/Categories";
 import SearchFilm from "../components/SearchFilm";
 import SliderHeader from "../components/SliderHeader";
+import { Link } from "react-router-dom";
 
 export default function HomeFeature() {
   const [film, setFilm] = useState("");
@@ -11,18 +12,15 @@ export default function HomeFeature() {
   const hendleGenre = (id) => {
     setGenre(id);
   };
-//   console.log(genre);
 
-const handleFilm = (value) => {
-    setFilm(value)
-}
+  const handleFilm = (value) => {
+    setFilm(value);
+  };
   return (
     <>
-    <nav>
-        <h2 className="nav__logo">
-          All Films
-        </h2>
-        <SearchFilm handleFilm={handleFilm}/>
+      <nav>
+        <h2 className="nav__logo">All Films</h2>
+        <SearchFilm handleFilm={handleFilm} />
       </nav>
       {!film && <SliderHeader />}
       <main>

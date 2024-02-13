@@ -31,6 +31,7 @@ export default function AllFilms({ film, genre }) {
             poster={film.posterUrlPreview}
             name={film.nameRu}
             year={film.year}
+            id={film.kinopoiskId}
             key={film.kinopoiskId}
           />
         ))
