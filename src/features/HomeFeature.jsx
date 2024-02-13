@@ -4,6 +4,7 @@ import Categories from "../components/Categories";
 import SearchFilm from "../components/SearchFilm";
 import SliderHeader from "../components/SliderHeader";
 import { Link } from "react-router-dom";
+import BtnBack from "../components/BtnBack";
 
 export default function HomeFeature() {
   const [film, setFilm] = useState("");
@@ -25,6 +26,7 @@ export default function HomeFeature() {
       {!film && <SliderHeader />}
       <main>
         {!film && <Categories hendleGenre={hendleGenre} />}
+        {film && <BtnBack handleFilm={handleFilm}/>}
         <AllFilms film={film} genre={genre} />
       </main>
     </>
